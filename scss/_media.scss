@@ -1,0 +1,265 @@
+@import "vars";
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
+@include media-breakpoint-down(lg) {
+
+}
+
+// ≥992px
+@include media-breakpoint-down(md) {
+	.two, .three {
+		margin-left: 0;
+		img {
+			margin: auto;
+		}
+		.col-lg-5 {
+			margin-bottom: 45px;
+			margin-top: 15px;
+		}
+	}
+
+	.three {
+		.col-lg-5 {
+			z-index: 100;
+			background-color: rgba(256,256,256,.8);
+			margin-bottom: -45px;
+			margin-top: 15px;
+		}
+		.just {
+			margin-top: 20%;
+			margin-bottom: 35%;
+		}
+	}
+	.two {
+		.col-lg-5 {
+			z-index: 100;	
+			background-color: rgba(256,256,256,.8);
+			margin-bottom: 45px;
+			margin-top: -40px;
+		}
+		.just {
+			margin-top: 20%;
+			margin-bottom: 35%;
+		}
+	}
+
+	.dropdown { 
+		.dropdown-menu {
+			margin: 0 auto;
+			text-align: center;
+		}
+	}
+
+	footer {
+		.nav-link {
+			padding-left: 0;
+		}
+	}
+
+	.one .container {
+		margin-top: 70px;
+	}
+	
+	.none {
+		padding-bottom: 50px;
+	}
+
+}
+
+// ≥768px
+@include media-breakpoint-down(sm) {
+
+//contact
+	.email {
+		margin-top: 50px;
+		.pad {
+			margin-bottom: 15px;
+		}	
+	}
+
+	.none {
+		display: none;
+	}
+
+//home
+	.logo {	
+		left: 18%;
+  }
+
+  .one {
+		.col-md-4 {
+			p {
+				margin-top: 40px;
+			}
+		}
+		.col-md-8 {
+			p {
+				text-align: center;
+				margin-top: 40px;
+				max-width: 600px;
+				font-size: 16px;
+			}
+		}
+	}
+	.one .container {
+		margin-top: 10px;
+	}
+
+	.faq {
+		footer {
+			background-size: 100%;
+		}
+		.main {
+			background-image: url(../img/buble3.png);
+			.big-faq {
+				margin-top: 200px;
+		  }
+		}
+	}
+	.main {
+	  background-position: 84% 24%;
+		background-size: 139%;
+	}
+
+}
+
+// ≥576px
+@include media-breakpoint-down(xs) {
+
+//contact 
+
+	.small {
+		a {
+			font-size: 12px;
+		}
+	}
+
+	.main {
+	  background-position: 84% 24%;
+		background-size: 139%;
+	}
+
+	.nemain {
+		.born {
+			margin-left: -5px;
+			font-size: 20px;
+		}	
+	}
+
+	.coop {
+		margin-top: 10px;
+		font-size: 10px;
+	}
+
+	footer {
+		img{
+			margin-right: 8px;
+			width: 15px;
+		}
+		.nav-link {
+			padding-right: 7px;
+		}
+	}
+
+	.faq {
+		footer {
+			background-size: 100%;
+		}
+		.main {
+			.big-faq {
+				margin-top: 200px;
+		  }
+		}
+	}
+
+	.team {
+		footer {
+			background-size: 100%;
+		}
+	}
+
+	.big-contact {
+		font-size: 80px;
+		width: 270px;
+	}
+
+	.one {
+	     min-width: 50%;
+	}
+	.three .container {
+	     margin-left: 0;
+	}
+	.col-lg-6, .col-lg-5 {
+	    margin: 5px 0px;
+	}
+		
+	.logo {
+		width: 250px;
+	}
+
+	.one {
+		.col-md-4 {
+			p {
+				margin-top: 40px;
+			}
+		}
+		.col-md-8 {
+			p {
+				text-align: center;
+				margin-top: 70px;
+				max-width: 600px;
+				font-size: 16px;
+			}
+		}
+	}
+
+	.three img, .two img {
+    max-width: 100%;
+    padding-top: 7px;
+	}
+
+	.social {
+		display: none;
+	}
+}
+
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
+@include media-breakpoint-up(sm) {
+
+}
+
+// ≤768px
+@include media-breakpoint-up(md) {
+
+}
+
+// ≤992px
+@include media-breakpoint-up(lg) {
+
+}
+
+// ≤1200px
+@include media-breakpoint-up(xl) {
+	
+}
+
+@media (min-aspect-ratio: 16/9) {
+   #trailer > video { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+   #trailer > video { width: 300%; left: -100%; }
+}
+
+@supports (object-fit: cover) {
+   #trailer > video {
+       top: 0; left: 0;
+       width: 100%; height: 100%;
+       object-fit: cover;
+   }
+}

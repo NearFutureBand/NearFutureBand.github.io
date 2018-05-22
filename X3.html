@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>mMm</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+  <link rel="icon" href="img/favicon/logo.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/bn.png">
+  <!-- Template Basic Images End -->
+
+  <!-- Custom Browsers Color Start -->
+  <meta name="theme-color" content="#000">
+  <!-- Custom Browsers Color End -->
+  <link rel="stylesheet" href="css/main.min.css">
+    <script async>
+        var images = [];
+        var i=1;
+        for(;i<=24;i++) {
+            var img = new Image();
+            img.src = 'img/container/c'+i+'.png';
+            images.push(img);
+        }
+        i = 1;
+        var rise = true;
+        
+        window.onload = function() {
+            
+            document.querySelector('.slideshow>img').addEventListener('click', rotate);
+        }
+        
+        var rotate = function(){
+            
+            if(i==1) rise = true;
+            else rise = false;
+            
+            var anim = setInterval(function() {
+                
+                
+                document.querySelector('.slideshow>img').remove();
+                document.querySelector('.slideshow').appendChild(images[ i-1 ] );
+                
+                if(rise) i++;
+                else i--;
+                
+                if( (rise && i == 25) || (!rise && i==0) ) {
+                    clearInterval(anim);
+                    document.querySelector('.slideshow>img').addEventListener('click', rotate);
+                    if(i==25) i--;
+                    else i=1;
+                }
+            },35);
+        }
+        
+        
+        
+    </script>
+</head>
+
+<body class="MMM">
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="">
+      <img style="max-width: 30px; max-height: 30px;" src="img/logo.png">
+    </a>
+    <a class="navbar-brand bran-logo" href="">
+      <img style="max-width: 60px; max-height: 35px; filter: invert(0.7);" src="img/bixbit_logo.png" alt="BiXBiT">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbar1">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link justyfy" href="index.html">home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="constructor.html">constructor</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link" href="X3.html">mMm</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">about</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="faq.html">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">contact</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            RUS
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">ENG</a>
+            <a class="dropdown-item" href="#">DEU</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+   
+    <div class="row slide first">
+      <div class="col-lg-5 col-md-5 col-sm-12 slideshow">
+          <img class="" src="img/container/c1.png" alt="Container">
+      </div>
+      <div class="col-lg-7 col-md-7 col-sm-12 description">
+       <div class="wrapper">
+            <div class="title">
+              <img src="img/bixbit_logo.png" style="filter: invert(1)" alt="Logo">
+              <h3>МОБИЛЬНЫЙ МОДУЛЬНЫЙ МАЙНЕР</h3>
+              <h4>x3 ПРИБЫЛЬНОСТИ ОТ МАЙНИНГА</h4>
+            </div>
+            <div class="text">
+              <strong>мМм</strong> - мобильный модульный майнер с инновационной системой иммерсионного охлаждения, системами жизнеобеспечения и удаленного администрирования.
+            </div>
+            <div class="form">
+              <form>
+                <div class="container-fluid">
+                  <p>Оставьте заявку, чтобы получить презентацию  мобильной фермы</p>
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                      <input type='text' name='email' id='email' placeholder="e-mail">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                      <button type='submit' id='submit-form'>ПОЛУЧИТЬ ПРЕЗЕНТАЦИЮ</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+        </div>
+        </div>
+    </div>
+  
+  
+    <div class="row slide second">
+      <div class="col-12 title">
+        <h1>ГЛАВНЫЕ ПРОБЛЕМЫ ПРОМЫШЛЕННОГО МАЙНИНГА</h1>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h4>ВЛАДЕЛЬЦЫ КРУПНЫХ МАЙНИНГ "ФЕРМ"</h4>
+            <div class="list">
+              <div>
+                  <img src="img/icon/1.png"><span>Снижение прибыльности<br>майнинга</span>
+                </div>
+              <div>
+                  <img src="img/icon/3.png"><span>Рост<br>сложности сети</span>
+                </div>
+              <div>
+                  <img src="img/icon/2.png"><span>Простой<br>оборудования</span>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h4>ИНВЕСТОРЫ В ПРОМЫШЛЕННЫЙ МАЙНИНГ</h4>
+            <div class="list">
+              <div>
+                  <img src="img/icon/4.png"><span>Риски, связанные с высокой волатильностью криптовалют</span>
+                </div>
+              <div>
+                  <img src="img/icon/5.png"><span>Сложность оснащения инфраструктуры для майнинга</span>
+                </div>
+              <div>
+                  <img src="img/icon/6.png"><span>Отсутствие специальных знаний и технических специалистов</span>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row slide image">
+    <div class="col-12">
+      <img class="img-responsive" src='img/big-bixbit.png'>
+    </div>
+  </div>
+
+  
+    <div class="row third slide">
+      <div class="col-12 title">
+        <h1>РЕШЕНИЕ — МОБИЛЬНЫЙ МОДУЛЬНЫЙ МАЙНЕР мМм</h1>
+      </div>
+      <div class="container block">
+        <div class="row">
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 col-sm-12">
+                        <h4>ВЛАДЕЛЬЦЫ КРУПНЫХ МАЙНИНГ "ФЕРМ"</h4>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-sm-12" id="sm-hide-title-1">
+                        <h4>ИНВЕСТОРЫ В ПРОМЫШЛЕННЫЙ МАЙНИНГ</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="element">
+                            <div class="img">
+                                <img class="img-responsive" src="img/BIXBIT_mini_logo.png">
+                            </div>
+                            <div class="body">
+                                <p>Система бездискового запуска позволяет моментально переключаться между задачами в автоматическом режиме. Если майнинг становится невыгодным, GPU легко перенастраиваются на полезные вычисления, которые уже сегодня приносят до 2 раз больше прибыли.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="element">
+                            <div class="img">
+                                <img class="img-responsive" src="img/BIXBIT_mini_logo.png">
+                            </div>
+                            <div class="body">
+                                <p>Система бездискового запуска отвечает за одновременный авторазгон всего оборудования, повышая  хэшрейт до максимально возможных показателей. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="element">
+                            <div class="img">
+                                <img class="img-responsive" src="img/BIXBIT_mini_logo.png">
+                            </div>
+                            <div class="body">
+                                <p>Размещение оборудования в герметичном контейнере с полным погружением в теплоноситель защищает оборудование от перегрева, пыли и мелкого мусора.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-sm-12" id="sm-show-title-1">
+                        <h4>ИНВЕСТОРЫ В ПРОМЫШЛЕННЫЙ МАЙНИНГ</h4>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="element">
+                            <div class="img">
+                                <img class="img-responsive" src="img/BIXBIT_mini_logo.png">
+                            </div>
+                            <div class="body">
+                                <p>Иммерсионная система охлаждения BiXBiT позволяет эффективно использовать выделяемое тепло в технологических процессах для деревообработки, текстильной и аграрной промышленности. В разрезе 3 лет дополнительный доход от реализации тепловой энергии может достигать до $600.000.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="element">
+                            <div class="img">
+                                <img class="img-responsive" src="img/BIXBIT_mini_logo.png">
+                            </div>
+                            <div class="body">
+                                <p>мМм - инфраструктурное решение “под ключ”. Майнер может располагаться в любой точке Земли и легко масштабируется.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="element">
+                            <div class="img">
+                                <img class="img-responsive" src="img/BIXBIT_mini_logo.png">
+                            </div>
+                            <div class="body">
+                                <p>Модуль BiXBiT создан для работы без участия технического персонала - все задачи по настройке и мониторингу процессов решает система удаленного администрирования. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+    <div class="row slide fourth">
+      <div class="col-12">
+        <h1>ПРИНЦИП РАБОТЫ мМм</h1>
+      </div>
+      <div class="col-10 offset-1 roadmap">
+        <img class="img-responsive" src="img/road.png">
+      </div>
+      <div class="col-12" id="sm-show-roadmap">
+         <img src="img/line.png" class="line">
+          <div class="el">
+              <div class="img">
+                  <img class="img-responsive" src="img/roadmap/icon1.png">
+              </div>
+              <div class="text">
+                  <span>КОНТЕЙНЕР 10/20/40 ФУТОВ</span>
+              </div>
+          </div>
+<!--          <img src="img/arrow.png" width="5%" style="position: absolute; left: 13.5%; top: 10.2%">-->
+          <div class="el">
+              <div class="img">
+                  <img class="img-responsive" src="img/roadmap/icon2.png">
+              </div>
+              <div class="text">
+                 
+                  <span>РАСПОЛОЖЕНИЕ В ЛЮБОЙ ТОЧКЕ ЗЕМЛИ</span>
+                  
+              </div>
+          </div>
+          <div class="el">
+              <div class="img">
+                  <img class="img-responsive" src="img/roadmap/icon7.png">
+              </div>
+              <div class="text">
+                  <span>СИСТЕМА ИММЕРСИОННОГО ОХЛАЖДЕНИЯ</span>
+              </div>
+          </div>
+          <div class="el">
+              <div class="img">
+                  <img class="img-responsive" src="img/roadmap/icon6.png">
+              </div>
+              <div class="text">
+                  <span>ЗАЩИТА ОТ ПЕРЕГРЕВА, ПЫЛИ И МУСОРА</span>
+              </div>
+          </div>
+          <div class="el">
+              <div class="img">
+                  <img class="img-responsive" src="img/roadmap/icon5.png">
+              </div>
+              <div class="text">
+                  <span>СВЕРХПРИБЫЛЬ ОТ УТИЛИЗАЦИИ ТЕПЛА ДО $600.000</span>
+              </div>
+          </div>
+          <div class="el">
+              <div class="img">
+                  <img class="img-responsive" src="img/roadmap/icon4.png">
+              </div>
+              <div class="text">
+                  <span>ВМЕСТИМОСТЬ ДО 768 ASIC ИЛИ 3456 ВИДЕОКАРТ</span>
+              </div>
+          </div>
+          <div class="el">
+              <div class="img">
+                  <img class="img-responsive" src="img/roadmap/icon3.png">
+              </div>
+              <div class="text">
+                  <span>УВЕЛИЧЕНИЕ ПРОИЗВОДИТЕЛЬНОСТИ ДО 40%</span>
+              </div>
+          </div>
+          
+          <div class="el">
+              <div class="img">
+                  <img class="img-responsive" src="img/roadmap/icon8.png">
+              </div>
+              <div class="text">
+                  <span>СИСТЕМА ЖИЗНЕОБЕСПЕЧЕНИЯ</span>
+              </div>
+          </div>          
+          <div class="el">
+              <div class="img">
+                  <img class="img-responsive" src="img/roadmap/icon9.png">
+              </div>
+              <div class="text">
+                  <span>СИСТЕМА УДАЛЕННОГО АДМИНИСТРИРОВАНИЯ</span>
+              </div>
+          </div>
+          <div class="el">
+              <div class="img">
+                  <img class="img-responsive" src="img/roadmap/icon10.png">
+              </div>
+              <div class="text">
+                  <span>МИНИМАЛИЗАЦИЯ ЧЕЛОВЕЧЕСКИХ РЕСУРСОВ</span>
+              </div>
+          </div>
+          <div class="el">
+              <div class="img">
+                  <img class="img-responsive" src="img/roadmap/icon19.png">
+              </div>
+              <div class="text">
+                  <span>СНИЖЕНИЕ ОПЕРАЦИОННЫХ РАСХОДОВ НА МАЙНИНГ ДО 7 РАЗ</span>
+              </div>
+          </div>
+          <div class="el">
+              <div class="img">
+                  <img class="img-responsive" src="img/roadmap/icon15.png">
+              </div>
+              <div class="text">
+                  <span>СИСТЕМА БЕЗДИСКОВОГО ЗАПУСКА</span>
+              </div>
+          </div>
+          <div class="el">
+              <div class="img">
+                  <img class="img-responsive" src="img/roadmap/icon18.png">
+              </div>
+              <div class="text">
+                  <span>ОДНОВРЕМЕННАЯ АВТОМАТИЧЕСКАЯ НАСТРОЙКА РИГОВ</span>
+              </div>
+          </div>
+          <div class="el">
+              <div class="img">
+                  <img class="img-responsive" src="img/roadmap/icon17.png">
+              </div>
+              <div class="text">
+                  <span>«РАЗГОН» ДО МАКСИМАЛЬНОГО ХЭШРЕЙТА</span>
+              </div>
+          </div>
+          <div class="el">
+              <div class="img">
+                  <img class="img-responsive" src="img/roadmap/icon16.png">
+              </div>
+              <div class="text">
+                  <span>ПЕРЕКЛЮЧЕНИЕ НА ПОЛЕЗНЫЕ ВЫЧИСЛЕНИЯ</span>
+              </div>
+          </div>
+          <div class="el">
+              <div class="img">
+                  <img class="img-responsive" src="img/roadmap/icon14.png">
+              </div>
+              <div class="text">
+                  <span>Х3 ПРИБЫЛЬНОСТИ ОТ МАЙНИНГА</span>
+              </div>
+          </div>
+          
+      </div>
+      <div class="col-12 cost">
+        <h1 >СОВОКУПНАЯ СТОИМОСТЬ ВЛАДЕНИЯ МАЙНЕРОМ BiXBiT В РАЗРЕЗЕ 3-Х ЛЕТ</h1>
+      </div>
+      <div class="col-12 table">
+        <style type="text/css">.ritz .waffle a { color: inherit; }.ritz .waffle .s1{border-bottom:1px SOLID #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'Arial';font-size:9pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:2px 3px 2px 3px;}.ritz .waffle .s5{border-bottom:1px SOLID #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:left;color:#000000;font-family:'Trebuchet MS';font-size:7pt;vertical-align:bottom;white-space:normal;overflow:hidden;word-wrap:break-word;direction:ltr;padding:2px 3px 2px 3px;}.ritz .waffle .s9{border-bottom:1px SOLID #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;font-weight:bold;color:#ff00c6;font-family:'Trebuchet MS';font-size:7pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:2px 3px 2px 3px;}.ritz .waffle .s3{border-bottom:1px SOLID #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:left;font-weight:bold;color:#000000;font-family:'Arial';font-size:10pt;vertical-align:bottom;white-space:normal;overflow:hidden;word-wrap:break-word;direction:ltr;padding:2px 3px 2px 3px;}.ritz .waffle .s7{border-bottom:1px SOLID #000000;border-right:1px SOLID #000000;background-color:#ff00c6;text-align:left;font-weight:bold;color:#000000;font-family:'Arial';font-size:10pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:2px 3px 2px 3px;}.ritz .waffle .s4{border-bottom:1px SOLID #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'Trebuchet MS';font-size:7pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:2px 3px 2px 3px;}.ritz .waffle .s0{border-bottom:1px SOLID #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:left;font-weight:bold;color:#000000;font-family:'Arial';font-size:10pt;vertical-align:top;white-space:normal;overflow:hidden;word-wrap:break-word;direction:ltr;padding:2px 3px 2px 3px;}.ritz .waffle .s2{border-bottom:1px SOLID #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'Arial';font-size:9pt;vertical-align:bottom;white-space:normal;overflow:hidden;word-wrap:break-word;direction:ltr;padding:2px 3px 2px 3px;}.ritz .waffle .s8{border-bottom:1px SOLID #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:right;font-weight:bold;color:#ff00c6;font-family:'Trebuchet MS';font-size:7pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:2px 3px 2px 3px;}.ritz .waffle .s6{border-bottom:1px SOLID #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:right;color:#000000;font-family:'Trebuchet MS';font-size:7pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:2px 3px 2px 3px;}
+        tr,td,th{
+          background-color: transparent!important;
+          font-family: inherit!important;
+          font-size: 11pt!important;
+          padding: 15px 10px!important;
+        }
+        tr>td:last-child {
+          border-right: none!important;
+        }
+        td.s6{
+          text-align: center!important;
+        }
+        td.s7{
+          background-color: rgba(221, 24, 237, 0.5)!important;
+          /*background: linear-gradient(90deg,#ff0030,#ff00ed);*/
+        }
+        th{
+          display: none!important;
+        }
+        table{
+          
+        }
+      </style>
+      <div class="ritz grid-container" dir="ltr"><table class="waffle" cellspacing="0" cellpadding="0"><!--<thead><tr><th class="row-header freezebar-origin-ltr"></th><th id="0C0" style="width:141px" class="column-headers-background">A</th><th id="0C1" style="width:100px" class="column-headers-background">B</th><th id="0C2" style="width:100px" class="column-headers-background">C</th><th id="0C3" style="width:100px" class="column-headers-background">D</th><th id="0C4" style="width:100px" class="column-headers-background">E</th><th id="0C5" style="width:100px" class="column-headers-background">F</th><th id="0C6" style="width:100px" class="column-headers-background">G</th></tr></thead>--><tbody><tr style='height:48px;'><th id="0R0" style="height: 48px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 48px;">1</div></th><td class="s0"></td><td class="s1" dir="ltr">BiXBiT<br>мМм</td><td class="s1" dir="ltr">BiXBiT мМм</td><td class="s2" dir="ltr">Модуль на воздушном охлаждении</td><td class="s2" dir="ltr">Модуль на воздушном охлаждении</td><td class="s2" dir="ltr">Модуль на жидкостном охлаждении</td><td class="s2" dir="ltr">Модуль на жидкостном охлаждении</td></tr><tr style='height:20px;'><th id="0R1" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;">2</div></th><td class="s3"></td><td class="s4" dir="ltr">Видеокарты</td><td class="s4" dir="ltr">ASICs</td><td class="s4" dir="ltr">Видеокарты</td><td class="s4" dir="ltr">ASICs</td><td class="s4" dir="ltr">Видеокарты</td><td class="s4" dir="ltr">ASICs</td></tr><tr style='height:20px;'><th id="0R2" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;">3</div></th><td class="s5" dir="ltr">Стоимость майнингового оборудования</td><td class="s6" dir="ltr">312 960</td><td class="s6" dir="ltr">307 200</td><td class="s6" dir="ltr">312 960</td><td class="s6" dir="ltr">307 200</td><td class="s6" dir="ltr">312 960</td><td class="s6" dir="ltr">307 200</td></tr><tr style='height:20px;'><th id="0R3" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;">4</div></th><td class="s5" dir="ltr">Стоимость жестких дисков</td><td class="s6" dir="ltr">0</td><td class="s6" dir="ltr">0</td><td class="s6" dir="ltr">24 000</td><td class="s6" dir="ltr">0</td><td class="s6" dir="ltr">24 000</td><td class="s6" dir="ltr">0</td></tr><tr style='height:20px;'><th id="0R4" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;">5</div></th><td class="s5" dir="ltr">Экономия на стоимости кулеров при отказе от них</td><td class="s6" dir="ltr">-12 960</td><td class="s6" dir="ltr">-7 680</td><td class="s6" dir="ltr">0</td><td class="s6" dir="ltr">0</td><td class="s6" dir="ltr">0</td><td class="s6" dir="ltr">0</td></tr><tr style='height:20px;'><th id="0R5" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;">6</div></th><td class="s5" dir="ltr">Оплата за электроэнергию потребляемую майн. оборуд.</td><td class="s6" dir="ltr">134 369</td><td class="s6" dir="ltr">663 552</td><td class="s6" dir="ltr">134 369</td><td class="s6" dir="ltr">663 552</td><td class="s6" dir="ltr">134 369</td><td class="s6" dir="ltr">663 552</td></tr><tr style='height:20px;'><th id="0R6" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;">7</div></th><td class="s5" dir="ltr">Экономия на электроэнергии при отказе от кулеров</td><td class="s6" dir="ltr">-11 197</td><td class="s6" dir="ltr">-23 224</td><td class="s6" dir="ltr">0</td><td class="s6" dir="ltr">0</td><td class="s7"></td><td class="s7"></td></tr><tr style='height:20px;'><th id="0R7" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;">8</div></th><td class="s5" dir="ltr">Затраты на охлаждение майн. оборудования</td><td class="s6" dir="ltr">5 676</td><td class="s6" dir="ltr">11 716</td><td class="s6" dir="ltr">12 960</td><td class="s6" dir="ltr">19 440</td><td class="s7"></td><td class="s7"></td></tr><tr style='height:20px;'><th id="0R8" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;">9</div></th><td class="s5" dir="ltr">Стоимость аренды за размещение модуля</td><td class="s6" dir="ltr">756</td><td class="s6" dir="ltr">756</td><td class="s6" dir="ltr">3 024</td><td class="s6" dir="ltr">3 024</td><td class="s6" dir="ltr">3 024</td><td class="s6" dir="ltr">3 024</td></tr><tr style='height:20px;'><th id="0R9" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;">10</div></th><td class="s5" dir="ltr">Полезная утилизация тепла</td><td class="s6" dir="ltr">-120 932</td><td class="s6" dir="ltr">-597 197</td><td class="s6" dir="ltr">0</td><td class="s6" dir="ltr">0</td><td class="s7"></td><td class="s7"></td></tr><tr style='height:20px;'><th id="0R10" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;">11</div></th><td class="s5" dir="ltr">Затраты по замене воздушных фильтров, необходимых для центральной вентиляции модуля</td><td class="s6" dir="ltr">0</td><td class="s6" dir="ltr">0</td><td class="s6" dir="ltr">1 800</td><td class="s6" dir="ltr">1 800</td><td class="s6" dir="ltr">0</td><td class="s6" dir="ltr">0</td></tr><tr style='height:20px;'><th id="0R11" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;">12</div></th><td class="s5" dir="ltr">Затраты на замену кулеров 1 раз в 1,5 года</td><td class="s6" dir="ltr">0</td><td class="s6" dir="ltr">0</td><td class="s6" dir="ltr">12 960</td><td class="s6" dir="ltr">7 680</td><td class="s7"></td><td class="s7"></td></tr><tr style='height:20px;'><th id="0R12" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;">13</div></th><td class="s5" dir="ltr">Затраты связанные с простоем оборудования</td><td class="s6" dir="ltr">6 221</td><td class="s6" dir="ltr">2 765</td><td class="s6" dir="ltr">37 325</td><td class="s6" dir="ltr">22 118</td><td class="s7"></td><td class="s7"></td></tr><tr style='height:20px;'><th id="0R13" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;">14</div></th><td class="s5" dir="ltr">Стоимость обслуживания</td><td class="s6" dir="ltr">18 000</td><td class="s6" dir="ltr">18 000</td><td class="s6" dir="ltr">54 000</td><td class="s6" dir="ltr">54 000</td><td class="s7"></td><td class="s7"></td></tr><tr style='height:20px;'><th id="0R14" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;">15</div></th><td class="s5" dir="ltr">Увеличение производительности оборудования за счет разгона</td><td class="s6" dir="ltr">-111 974</td><td class="s6" dir="ltr">-497 664</td><td class="s6" dir="ltr">0</td><td class="s6" dir="ltr">0</td><td class="s7"></td><td class="s7"></td></tr><tr style='height:20px;'><th id="0R15" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;">16</div></th><td class="s5" dir="ltr">Затраты по замене вышедшего из строя оборудования для майнинга</td><td class="s6" dir="ltr">8 698</td><td class="s6" dir="ltr">9 216</td><td class="s6" dir="ltr">86 688</td><td class="s6" dir="ltr">46 080</td><td class="s7"></td><td class="s7"></td></tr><tr style='height:20px;'><th id="0R16" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;">17</div></th><td class="s5" dir="ltr">Пусконаладочные работы (затраты связанные с простоем оборудования)</td><td class="s6" dir="ltr">1 037</td><td class="s6" dir="ltr">1 843</td><td class="s6" dir="ltr">1 037</td><td class="s6" dir="ltr">1 843</td><td class="s7"></td><td class="s7"></td></tr><tr style='height:20px;'><th id="0R17" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;">18</div></th><td class="s5" dir="ltr">Вторичная продажа отработанного майнингового оборудования с учетом его подготовки (очистки, отмывания и прочее)</td><td class="s6" dir="ltr">-31 296</td><td class="s6" dir="ltr">-30 720</td><td class="s6" dir="ltr">0</td><td class="s6" dir="ltr">0</td><td class="s7"></td><td class="s7"></td></tr><tr style='height:20px;'><th id="0R18" style="height: 20px;" class="row-headers-background"><div class="row-header-wrapper" style="line-height: 20px;">19</div></th><td class="s8" dir="ltr">Итого</td><td class="s9" dir="ltr">274 357</td><td class="s9" dir="ltr">-51 437</td><td class="s9" dir="ltr">681 123</td><td class="s9" dir="ltr">1 126 738</td><td class="s9" dir="ltr">474 353</td><td class="s9" dir="ltr">973 776</td></tr></tbody></table></div>
+      <script type='text/javascript' nonce='9FwP2xIUnwqqmAJc6futSoZ88PY'>
+        function posObj(sheet, id, row, col, x, y) {
+          var rtl = false;
+          var sheetElement = document.getElementById(sheet);
+          if (!sheetElement) {
+            sheetElement = document.getElementById(sheet + '-grid-container');
+          }
+          if (sheetElement) {
+            rtl = sheetElement.getAttribute('dir') == 'rtl';
+          }
+          var r = document.getElementById(sheet+'R'+row);
+          var c = document.getElementById(sheet+'C'+col);
+          if (r && c) {
+            var objElement = document.getElementById(id);
+            var s = objElement.style;
+            var t = y;
+            while (r && r != sheetElement) {
+              t += r.offsetTop;
+              r = r.offsetParent;
+            }
+            var offsetX = x;
+            while (c && c != sheetElement) {
+              offsetX += c.offsetLeft;
+              c = c.offsetParent;
+            }
+            if (rtl) {
+              offsetX -= objElement.offsetWidth;
+            }
+            s.left = offsetX + 'px';
+            s.top = t + 'px';
+            s.display = 'block';
+            s.border = '1px solid #000000';
+          }
+        };
+        function posObjs() {
+        };
+        posObjs();
+      </script>
+    </div>
+        <div class="col-12" id="sm-show-link-to-table">
+            <a href="table.html">Посмотреть таблицу</a>
+        </div>
+  </div>
+
+
+  <div class="row slide fifth">
+   <div class="container">
+       <div class="row">
+           <div class="col-12 title">
+               <img src="img/bixbit_logo.png" style="filter: invert(1)" alt="Logo">
+                <h3>МОБИЛЬНЫЙ МОДУЛЬНЫЙ МАЙНЕР</h3>
+                <h4>x3 ПРИБЫЛЬНОСТИ ОТ МАЙНИНГА</h4>
+           </div>
+           <div class="col-12 form">
+               <form>
+               <h5>Остались вопросы? Отправьте заявку и получите подробную консультацию по продукту!</h5>
+                <div>
+                    <input type='text' name='email' id='email' placeholder="e-mail">
+                    <button type='submit' id='submit-form'>КОНСУЛЬТАЦИЯ</button>
+                </div>
+              </form>
+           </div>
+       </div>
+   </div>
+</div>
+</div>
+
+
+  
+    <footer class="nemain">
+      <div class="container-fluid">
+        <div class="born">MORE THAN JUST<br>MINING EQUIPMENT.</div>
+        <ul class="small">
+          <li class="nav-item">
+            <a class="nav-link justyfy" href="index.html">home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="constructor.html">constructor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link" href="X3.html">mMm</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">about</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="faq.html">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">contact</a>
+          </li>
+        </ul>
+        <p class="line"></p>
+        <div class="row">
+          <div class="col-6">
+            <a herf="#.html"><img style="filter: invert(1);" class="img-response" src="img/media/link.png" alt="Linkedln"></a>
+            <a herf="#.href"><img style="filter: invert(1);" class="img-response" src="img/media/bitcoin.png" alt="Bitcoin"></a>
+            <a herf="#.href"><img style="filter: invert(1);" class="img-response" src="img/media/telegram.png" alt="Telegram"></a>
+            <a herf="#.href"><img style="filter: invert(1);" class="img-response" src="img/media/reddit.png" alt="Reddit"></a>
+            <a href="#.hred"><img style="filter: invert(0);" class="img-response" src="img/media/facebook.png" alt="Facebook"></a>
+          </div>
+          <div class="col-6">
+            <p class="coop">(c) BiXBiT 2018<a class="coop" href="#"> Privacy Policy</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <div class="social">
+    <div class="soc-med" style="background-image: url(img/rectangle_gray.png);">
+      <a herf="#"><img style="filter: invert(1);" class="img-response" src="img/media/link.png" alt="Linkedln"></a>
+      <a herf="#"><img style="filter: invert(1);" class="img-response" src="img/media/bitcoin.png" alt="Bitcoin"></a>
+      <a herf="#"><img style="filter: invert(1);" class="img-response" src="img/media/telegram.png" alt="Telegram"></a>
+      <a herf="#"><img style="filter: invert(1);" class="img-response" src="img/media/reddit.png" alt="Reddit"></a>
+      <a href="#"><img class="img-response" src="img/media/facebook.png" alt="Facebook"></a>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</body>  

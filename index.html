@@ -36,14 +36,69 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function(){
-            $(window).scroll(function(){
-                alert('scroll');   
-            }); 
+            
+            var vpPos = $(window).scrollTop();
+            var sections = Array.from( document.getElementsByClassName('section') );
+            
+            sections.forEach( function(item) {
+                item = item.offsetTop;
+                console.log(item);
+            });
+            
+            var secHeight = $(window).innerHeight();
+            
+            $(window).on('wheel', function(){
+                alert('wheel');
+            })
+            
+            /*$(window).scroll(function() {
+                
+                let scroll =  $(window).scrollTop();
+                let here = getCurrentPosition(vpPos);
+                
+                //console.log(here);
+                //alert('scroll');
+                
+                if( scroll > vpPos) {
+                    
+                    // to bottom
+                    if(here != sections.length - 1) {
+                        
+                        console.log('get down');
+                        
+                        //$(window).scrollTop( sections[here+1] );
+                        
+                        window.scrollBy(0, secHeight);
+                    }
+                                    
+                    
+                } else {
+                    //to top
+                    if( here != 0) {
+                        console.log('get up');
+                        
+                        $('html, body').animate({
+                            scrollTop: sections[here - 1]
+                        }, 500);
+                        
+                    }                    
+                }
+                vpPos = scroll;
+            });*/
+            
+            var getCurrentPosition = function(scroll) {
+                let i = 0;
+                for(; i<sections.length; i++) {
+                    if(scroll >= i*secHeight && scroll < (i+1)*secHeight ) {
+                        return i;
+                    }
+                }            
+            }
         });
          
     </script>

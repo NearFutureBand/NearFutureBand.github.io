@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap-grid.min.css">
+    
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/themes.css">
+</head>
+<body>
+    <div class="container-fluid lightTheme">
+        <h2>Catch the red button!</h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-4"></div>
+            <div class="col-lg-1 col-md-1">
+                Width<br>
+                Height
+            </div>
+            <div class="col-lg-2 col-md-2">
+                <input type="text" id="width" value="3"><br>
+                <input type="text" id="height" value="3">
+            </div>
+            <div class="col-lg-1 col-md-1">
+                <button id="setGrid">GO!</button>
+            </div>
+        </div>
+    </div>
+    <div class="container clicker lightTheme">
+        <canvas id="map"></canvas>
+    </div>
+    <script>
+        function RandomInt(min,max){
+            return Math.floor(Math.random()*(max-min))+min;
+        }
+        class Qu{
+            constructor(i,color){
+                this.i = i;
+                this.color = false;
+            }
+            lightUp(){
+                this.color = true;
+            }
+            turnDown(){
+                this.color = false;
+            }
+        }
+        function recentralizeCanvas(){
+                $('canvas').css('margin-left',$('div.clicker').width()/2-map.width/2+'px');
+            }
+        $(document).ready(function(){
+            var map = document.getElementById("map");
+            ctx = map.getContext('2d');
+            recentralizeCanvas();
+            
+            $('#setGrid').click(function(){
+                
+                var M = $('#width').val();
+                var N = $('#height').val();
+                var scaleX = 100;
+                var scaleY = 100;
+                map.width=M*scaleX;
+                map.height=N*scaleY;
+                recentralizeCanvas();
+                var x;
+                var y;
+                ctx.strokeStyle = "#FFFFFF";
+                ctx.lineWidth = 10;
+                var active;
+                //var z = setInterval(function(){
+                    ctx.clearRect(0,0,map.width,map.height);
+                    active = RandomInt(0,M*N-1);
+                    for(var i=0;i<M*N;i++){
+                        x=i%M*scaleX+(scaleX/2);
+                        y=Math.floor(i/M)*scaleY+(scaleY/2);
+                        if(active==i){
+                            quad(x,y,true);    
+                        }
+                        else quad(x,y,false);
+                    }     
+                //}, 1000);
+                
+                function quad(x,y,color){
+                    if(color==true) ctx.fillStyle = "rgba(255,0,0,.9)";
+                    else ctx.fillStyle = "rgba(0,0,255,.9)";
+                    ctx.strokeRect(x-(scaleX/2),y-(scaleY/2),scaleX,scaleY);
+                    ctx.fillRect(x-(scaleX/2),y-(scaleY/2),scaleX,scaleY);
+                }
+            });
+            
+            
+            
+            
+            
+            
+        });
+    </script>
+    </body>
+</html>

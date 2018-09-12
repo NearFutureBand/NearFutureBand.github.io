@@ -1,0 +1,157 @@
+*{
+    transition: all .2 ease;
+     font-family: 'Roboto Condensed', sans-serif;
+}
+.page{
+    display: none;
+    background-color: black;
+}
+.page:nth-of-type(1) {
+    display: block;
+}
+nav {
+    background-color: transparent;
+    height: 15vh;
+    box-shadow: none;
+}
+
+#home{
+    .page{
+        background-color: black;
+        height: 100vh;
+        color: white;
+        font-family: 'Roboto Condensed', sans-serif;
+    }    
+    .nav-wrapper, .nav-mobile{
+        ul{
+            padding-top: 6vh;
+            padding-left: 10vh;
+            img {
+                height: 64px;
+            }
+            li {
+                padding-left: 12px;
+                a {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+    .vertical-text {
+        -webkit-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+        -o-transform: rotate(270deg);
+        transform: rotate(270deg);
+        position: absolute;
+        top: 40vh;
+        left: 0;
+    }
+}
+
+#team{
+    background-color: #f2f2f2;
+    h1{
+        border-top: 7px solid black;
+    }
+    h2{
+        border-top: 3px solid black;
+    }
+    h3{
+        color: #ff00c6;
+        font-size: 2rem;
+    }
+    h6{
+        font-size: .9rem;
+        font-weight: 500;
+    }
+    .upper{
+        .xl5, xl7{
+            height: 100vh;
+        }
+        .xl5{
+            padding: 25vh 10px 10px 15%;
+            background-image: url(../img/bubble1.png);
+            background-size: 55%;
+            background-repeat: no-repeat;
+            background-position: 50% 40%;
+            h1{
+                padding-top: 30px;
+                width: 170px;
+                text-align: left;
+            }
+        }
+        .xl7{
+            padding: 30vh 15% 10px 10px;
+        }
+    }
+    
+    .title{
+        padding: 5px 15%;
+        h2{
+            width: 150px;
+            text-align: left;
+        }
+    }
+    .person{
+        padding: 50px 20px;
+        .line{
+            margin: 20px 0px;
+            width: 100px;
+            height: 3px;
+            background-color: black;
+        }
+        .photo{
+            display: flex;
+            img{
+                width: 450px;
+                height: 558px;
+            }
+        }
+        .photo-right{
+            justify-content: flex-end;
+            padding-right: 15%;
+        }
+        .photo-left{
+            justify-content: flex-start;
+            padding-left: 15%;
+        }
+        .descr{
+            h3{
+                margin: 0px;
+            }
+            p:nth-of-type(1){
+                font-weight: 500;
+            }
+            p:nth-of-type(2){
+                margin: 60px 0px;
+            }
+        }
+        .descr-right{
+            padding-right: 15%;
+        }
+        .descr-left{
+            padding-left: 15%;
+        }
+    }
+    .team-photo{
+        padding: 10px 16%;
+        img{
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+        }
+    }
+}
+
+#mmm {
+    background-color: white;
+    img {
+        height: 50vh;
+        padding-top: 8vh;
+        padding-left: 15vh;
+    }
+    p {
+        color: black;
+        padding-left: 25vh;
+    }
+}

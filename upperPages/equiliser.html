@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+<body>
+    <h2 class="equiliser">Press on any coll to change the animation!</h2>
+    <div class="equiliser">
+        <div class="coll"></div>
+        <div class="coll"></div>
+        <div class="coll"></div>
+        <div class="coll"></div>
+        <div class="coll"></div>
+        <div class="coll"></div>
+        <div class="coll"></div>
+        <div class="coll"></div>
+        <div class="coll"></div>
+        <div class="coll"></div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            var indexes = [350,400,450,500];//названия анимаций
+            $('.equiliser>.coll').click(function(){
+                var name = indexes[  Math.floor(Math.random()*4)  ];//[0;4)
+                var duration = Math.random()+0.5;
+                $(this).css('animation','jump-'+name+' '+duration+'s infinite ease-in-out alternate');   
+            });    
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300');
+@accent-color: #ff00c6;
+
+*{
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    font-size: 11pt;
+}
+a, a:hover{
+    text-decoration: none;
+    background-color: transparent;
+}
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.page{
+    display: none;
+    background-color: black;
+}
+.page:nth-of-type(1) {
+    display: block;
+}
+
+nav{
+    background-color: transparent;
+    box-shadow: none;
+    z-index: 1;
+    position: absolute;
+    top:0;
+    .nav-wrapper {
+        padding: 10px 180px 10px 20px;
+        ul.left{
+            width: auto;
+            img {
+                width: 30%;
+            }
+        }
+        #nav-mobile{
+            a{
+                height: auto;
+                transition: all .2s ease;
+                -webkit-transition: all .2s ease;
+            }
+            a:hover{
+                color: @accent-color;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+#header-bg{
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        bottom:0;
+        right: 0;
+        left: 0;
+        transition: all .2s ease;
+        -webkit-transition: all .2s ease;
+}
+#home{
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    /*background-image: url(../img/bg1.jpg);
+    background-size: 20%;
+    background-position: center;
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;*/
+    >.row>div.col:nth-of-type(2){
+        position: absolute;
+        top: 25vh;
+        left: 35%;
+        z-index: 1;
+        width: 30%;
+        img{
+            width: 80%;
+        }
+    }
+    .vertical-text {
+        -webkit-transform: rotate(270deg);
+        position: absolute;
+        top: 40vh;
+        left: 0;
+    }
+}
+
+#team{
+    background-color: #f2f2f2;
+    h1{
+        border-top: 7px solid black;
+    }
+    h2{
+        border-top: 3px solid black;
+    }
+    h3{
+        color: #ff00c6;
+        font-size: 2rem;
+    }
+    h6{
+        font-size: .9rem;
+        font-weight: 500;
+    }
+    .upper{
+        .xl5, xl7{
+            height: 100vh;
+        }
+        .xl5{
+            padding: 25vh 10px 10px 15%;
+            background-image: url(../img/bubble1.png);
+            background-size: 55%;
+            background-repeat: no-repeat;
+            background-position: 50% 40%;
+            h1{
+                padding-top: 30px;
+                width: 170px;
+                text-align: left;
+            }
+        }
+        .xl7{
+            padding: 30vh 15% 10px 10px;
+        }
+    }
+    
+    .title{
+        padding: 5px 15%;
+        h2{
+            width: 150px;
+            text-align: left;
+        }
+    }
+    .person{
+        padding: 50px 20px;
+        .line{
+            margin: 20px 0px;
+            width: 100px;
+            height: 3px;
+            background-color: black;
+        }
+        .photo{
+            display: flex;
+            img{
+                width: 450px;
+                height: 558px;
+            }
+        }
+        .photo-right{
+            justify-content: flex-end;
+            padding-right: 15%;
+        }
+        .photo-left{
+            justify-content: flex-start;
+            padding-left: 15%;
+        }
+        .descr{
+            h3{
+                margin: 0px;
+            }
+            p:nth-of-type(1){
+                font-weight: 500;
+            }
+            p:nth-of-type(2){
+                margin: 60px 0px;
+            }
+        }
+        .descr-right{
+            padding-right: 15%;
+        }
+        .descr-left{
+            padding-left: 15%;
+        }
+    }
+    .team-photo{
+        padding: 10px 16%;
+        img{
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+        }
+    }
+}

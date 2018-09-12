@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+<body class="cubeWrapper">
+    <h2>Press anywhere to rotate the cube!</h2>
+    <div id="cube">
+        <div class="side" id="side1">1</div>
+        <div class="side" id="side2">2</div>
+        <div class="side" id="side3">3</div>
+        <div class="side" id="side4">4</div>
+        <div class="side" id="side5">5</div>
+        <div class="side" id="side6">6</div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $(document).mousedown(function(e){
+               $('#cube').css({
+                   '-webkit-transform':'rotateX('+e.pageY+'deg) rotateY('+e.pageX+'deg)'
+               });
+            });
+        });
+    </script>
+</body>
+</html>

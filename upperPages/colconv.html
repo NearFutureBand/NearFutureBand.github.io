@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/themes.css">
+</head>
+<body>
+    <div class="container-fluid header lightTheme">
+        <h2>Input color code in one of the fields and get it in the other form</h2>
+    </div>
+    
+    <div class="container colorConverter darkTheme">
+        <div class="row">
+            <div class="col-lg-2 col-md-2"></div>
+            <div class="col-lg-3 col-md-3" id="divHex">
+                <input type="text" placeholder="#xxxxxx" class="linkBorder">
+                <h2></h2>
+            </div>
+            <div class="col-lg-2 col-md-2 link">
+                <i class="fa fa-check" aria-hidden="true"></i><i class="fa fa-refresh" aria-hidden="true"></i>
+            </div>
+            <div class="col-lg-3 col-md-3" id="divRgba">
+                <input type="text" placeholder="rgba(x,x,x,*)" class="linkBorder">
+                <h2></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="chosenColor"></div>
+        </div>
+    </div>
+    <script>
+        function checkStr(str,sw){//проверка на наличие необходимых символов
+            if(sw==0){//режим проверки hex
+                if(str[0]=='#' && str.length == 7) return true;
+                else return false;
+            }
+            else if(sw==1){//режим проверки rgba
+                if(str.substring(0,5)=="rgba(") return true;
+                else return false;
+            }
+            else{
+                //ошбика
+            }
+        }
+        function codeDeco(x){
+            var hs=['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
+            if(typeof(x)=="number") return hs[x];
+            else if(typeof(x)=="string") return hs.indexOf(x);
+            else return -1;
+        }
+        function toRgba(hex){
+            var sym;//пара чисел в шестнадцатеричной
+            var num = Array(2);//массив из двух десятичных чисел
+            var result = "rgba( ";
+            for(var i=0;i<3;i++){
+                sym=hex.substring(i*2+1,i*2+3);//получаем три пары чисел
+                for(var j=0;j<2;j++){
+                    num[j]=codeDeco(sym[j]);//переход к десятичным цифрам
+                }
+                result += (num[0]*16+num[1]).toString();
+                result += ", ";
+            }
+            result += "1);";
+            return result;
+        }
+        function toHex(rgba){
+            rgba=rgba.substr(5);
+            var coma;//позиция запятой
+            var tmp;//строка с числом
+            var x;
+            var result = "#";
+            for(var i=0;i<3;i++){
+                coma=rgba.indexOf(',',0);
+                tmp=rgba.substring(0,coma);//число, которое надо перевести в hex
+                x=Number(tmp);
+                result += codeDeco(Math.floor(x/16));
+                result += codeDeco(x%16);
+                rgba=rgba.substr(coma+1);
+            }
+            return result;
+        }
+        $(document).ready(function(){
+            $("[class*=fa-check]").click(function(){
+                if($('#divHex>input').val()!=""){//hex ->rgba
+                    var hex = $('#divHex>input').val();
+                    if(checkStr(hex,0)==true) var rgba = toRgba(hex);
+                    else hex = "incorrect format";
+                }
+                else{//rgba->hex
+                    var rgba = $('#divRgba>input').val();
+                    if(checkStr(rgba,1)==true) var hex = toHex(rgba);
+                    else rgba = "incorrect format";
+                }
+                
+                $('input').hide(200);
+                $('i:nth-of-type(2)').css('display','block');
+                $('i:nth-of-type(1)').css('display','none');
+                $('#divHex>h2').append(hex).show(200);
+                $('#divRgba>h2').append(rgba).show(200);
+                $('[class*=chosenColor]').css('background-color',hex).css('display','block');
+            });
+            $("[class*=fa-refresh]").click(function(){
+                location.reload();//перезагрузить страницу   
+            });
+        });
+    </script>
+</body>
+</html>

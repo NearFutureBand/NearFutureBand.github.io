@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+	<title>Test</title>
+</head>
+<body>
+	<canvas id="drawingCanvas"></canvas>
+</body>
+<script type="text/javascript">
+    $(document).ready(function(){
+        canvas = document.getElementById("drawingCanvas");
+        ctx = canvas.getContext("2d");
+        canvas.width = $(window).width()*0.99;
+        canvas.height = $(window).height()*0.99;
+        var img = new Image();
+        
+        img.onload = function(){
+            var swidth = 340;
+            var padding = 10;
+            var i=8;    
+            setInterval(function(){
+                if(i==0) i=8;
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+                ctx.drawImage(img,-3.5*padding+swidth*i-padding*i,0,320,200,canvas.width/2-160,canvas.height/2-100,320,200); 
+                i--;
+            },100);
+        };
+        img.src = "../img/cheetah.png";
+    });
+</script>
+</html>

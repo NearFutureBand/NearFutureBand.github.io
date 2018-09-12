@@ -1,141 +1,49 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel=stylesheet href="style.css">
-    
-    <title>Scroll test</title>
-  </head>
-  <body>
-    <div class="container-fluid section home">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+<body class="indexPage">
+    <div class="container-fluid header darkTheme">
         <div class="row">
-            <div class="col-12">
-                <h2>FIRST</h2>
+            <div class="col-lg-7 col-md-7 col-sm-7 banner">
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5">
+                <h1>NEAR FUTURE band</h1>
             </div>
         </div>
     </div>
-    <div class="container-fluid section home">
+    <div class="container introduction darkTheme">
         <div class="row">
-            <div class="col-12">
-                <h2>SECOND</h2>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <p>For the present all the effects stably work in Chrome & Safari browsers. Check out any trick you want. Buttons with inscription "in progress" are under construction.</p>
             </div>
         </div>
     </div>
-    <div class="container-fluid section home">
-        <div class="row">
-            <div class="col-12">
-                <h2>THIRD</h2>
-            </div>
-        </div>
+    <div class="container tiles darkTheme">
+        <a class="tile linkBg" href="upperPages/parallax.html">The interference of light with the CSS parallax effect<img src="img/interference.png"></a>
+        <a class="tile linkBg" href="upperPages/3dcube.html">A 3D cube with rotating transformations<img src="img/cube.png"></a>
+        <a class="tile linkBg" href="upperPages/rgbCircle.html">An additive color model with SVG graphics<img src="img/rgbModel.png"></a>
+        <a class="tile linkBg" href="upperPages/equiliser.html">An equiliser using @keyframes block<img src="img/equiliser.png"></a>
+        <a class="tile linkBg">Different navigation bars with javascript and without (in progress)<img src="img/nav.png"></a>
+        <a class="tile linkBg" href="upperPages/colconv.html">A color converter between #hex and rgba()<img src="img/colorConverter.png"></a>
+        <a class="tile linkBg" href="upperPages/question-answer-alfa.html">A funny game for a big party "Question-Answer"<img src="img/smile.png"></a>
+        <a class="tile linkBg" href="upperPages/starWarsText.html">Star Wars Intro style for a text<img src="img/deathStar.png"></a>
+        <a class="tile linkBg" href="#">Check your reaction with The Clicker (in progress)<img src="img/drumPad.png"></a>
+        <a class="tile linkBg" href="#">The SVG guitar neck to learn notes (coming soon)<img src="img/guitarNeck.png"></a>
+        <a class="tile linkBg" href="#">The funny lottery with a gauss function (coming soon)<img src="img/gaussLottery.png"></a>
+        <a class="tile linkBg" href="upperPages/runningCheetah.html">My first animation<img src="img/cheetah1.png"></a>
     </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function(){
-            
-            var vpPos = $(window).scrollTop();
-            var sections = Array.from( document.getElementsByClassName('section') );
-            
-            sections.forEach( function(item) {
-                item = item.offsetTop;
-                console.log(item);
-            });
-            
-            var secHeight = $(window).innerHeight();
-            
-            $(window).on('wheel', function(){
-                alert('wheel');
-            })
-            
-            /**/
-            
-            var initialPoint;
-            var finalPoint;
-            document.addEventListener('touchstart', function(event) {
-                event.preventDefault();
-                event.stopPropagation();
-                initialPoint=event.changedTouches[0];
-            }, false);
-            document.addEventListener('touchend', function(event) {
-                event.preventDefault();
-                event.stopPropagation();
-                finalPoint=event.changedTouches[0];
-                var xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
-                var yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
-                if (xAbs > 20 || yAbs > 20) {
-                    if (xAbs > yAbs) {
-                        if (finalPoint.pageX < initialPoint.pageX){
-                            /*СВАЙП ВЛЕВО*/}
-                        else{
-                            /*СВАЙП ВПРАВО*/}
-                    }
-                    else {
-                        if (finalPoint.pageY < initialPoint.pageY){
-                            alert('up');
-                            /*СВАЙП ВВЕРХ*/}
-                        else{
-                            alert('down');
-                            /*СВАЙП ВНИЗ*/}
-                    }
-                }
-            }, false);
-            
-            /**/
-            
-            /*$(window).scroll(function() {
-                
-                let scroll =  $(window).scrollTop();
-                let here = getCurrentPosition(vpPos);
-                
-                //console.log(here);
-                //alert('scroll');
-                
-                if( scroll > vpPos) {
-                    
-                    // to bottom
-                    if(here != sections.length - 1) {
-                        
-                        console.log('get down');
-                        
-                        //$(window).scrollTop( sections[here+1] );
-                        
-                        window.scrollBy(0, secHeight);
-                    }
-                                    
-                    
-                } else {
-                    //to top
-                    if( here != 0) {
-                        console.log('get up');
-                        
-                        $('html, body').animate({
-                            scrollTop: sections[here - 1]
-                        }, 500);
-                        
-                    }                    
-                }
-                vpPos = scroll;
-            });*/
-            
-            var getCurrentPosition = function(scroll) {
-                let i = 0;
-                for(; i<sections.length; i++) {
-                    if(scroll >= i*secHeight && scroll < (i+1)*secHeight ) {
-                        return i;
-                    }
-                }            
-            }
+            var disp = [-141,-40,102,200,291,451,561,646];
+            var val = disp[  Math.floor(Math.random()*8)  ];
+            $('.banner').css("background-position","15px "+val+"px"); 
         });
-         
     </script>
-  </body>
+</body>
 </html>

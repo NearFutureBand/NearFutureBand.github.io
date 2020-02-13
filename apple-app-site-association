@@ -5,8 +5,7 @@
       {
         "appID": "K7JMF732S8.im.ringl.delivio.food",
         "paths": [
-          "/restaurant/*",
-          "/upperPages/*"
+          "*"
         ]
       }
     ]
